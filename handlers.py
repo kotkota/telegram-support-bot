@@ -16,9 +16,9 @@ def start(update, context):
         context.bot.send_message(
             chat_id=TELEGRAM_SUPPORT_CHAT_ID,
             text=f"""
-    📞 Новый пользователь - @{username}.
-    📅 Дата - {today}
-    Номер №"""
+📞 Новый пользователь - @{username}.
+📅 Дата - {today}
+🌀Пользователь уже зарегестрирован"""
         )
         
     else:
@@ -28,9 +28,9 @@ def start(update, context):
         context.bot.send_message(
             chat_id=TELEGRAM_SUPPORT_CHAT_ID,
             text=f"""
-    📞 Новый пользователь - @{username}.
-    📅 Дата - {today}
-    Номер №""" + b
+📞 Новый пользователь - @{username}.
+📅 Дата - {today}
+🌀Номер №""" + b
         )
         n = n + 1
 
