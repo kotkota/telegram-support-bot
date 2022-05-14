@@ -11,7 +11,6 @@ def start(update, context):
     username = update.message.chat.username
     
     if username in listv:
-        listv.append(username)
         today = date.today()
         b = str(n)
         context.bot.send_message(
@@ -19,10 +18,11 @@ def start(update, context):
             text=f"""
     📞 Новый пользователь - @{username}.
     📅 Дата - {today}
-    Номер №""" + b
+    Номер №"""
         )
-        n = n + 1
+        
     else:
+        listv.append(username)
         today = date.today()
         b = str(n)
         context.bot.send_message(
