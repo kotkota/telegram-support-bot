@@ -3,21 +3,36 @@ from telegram.ext import CommandHandler, MessageHandler, Filters
 from datetime import date
 from settings import WELCOME_MESSAGE, TELEGRAM_SUPPORT_CHAT_ID, REPLY_TO_THIS_MESSAGE, WRONG_REPLY
 n = 0
-
+listv = []
 def start(update, context):
     global n
+    global listv
     update.message.reply_text(WELCOME_MESSAGE)
     username = update.message.chat.username
-    today = date.today()
-    b = str(n)
-    context.bot.send_message(
-        chat_id=TELEGRAM_SUPPORT_CHAT_ID,
-        text=f"""
-📞 Новый пользователь - @{username}.
-📅 Дата - {today}
-Номер №""" + b
-    )
-    n = n + 1
+    
+    if username in listv:
+        listv.append(username)
+        today = date.today()
+        b = str(n)
+        context.bot.send_message(
+            chat_id=TELEGRAM_SUPPORT_CHAT_ID,
+            text=f"""
+    📞 Новый пользователь - @{username}.
+    📅 Дата - {today}
+    Номер №""" + b
+        )
+        n = n + 1
+    else:
+        today = date.today()
+        b = str(n)
+        context.bot.send_message(
+            chat_id=TELEGRAM_SUPPORT_CHAT_ID,
+            text=f"""
+    📞 Новый пользователь - @{username}.
+    📅 Дата - {today}
+    Номер №""" + b
+        )
+        n = n + 1
 
 
 def forward_to_chat(update, context):
