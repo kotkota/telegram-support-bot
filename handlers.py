@@ -5,17 +5,17 @@ from settings import WELCOME_MESSAGE, TELEGRAM_SUPPORT_CHAT_ID, REPLY_TO_THIS_ME
 n = 0
 
 def start(update, context):
+    global n
     update.message.reply_text(WELCOME_MESSAGE)
     username = update.message.chat.username
     today = date.today()
-
+    b = str(n)
     context.bot.send_message(
         chat_id=TELEGRAM_SUPPORT_CHAT_ID,
         text=f"""
 📞 Новый пользователь - @{username}.
 📅 Дата - {today}
-Номер №{n}
-        """,
+Номер №""" + b
     )
     n = n + 1
 
