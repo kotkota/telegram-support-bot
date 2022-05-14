@@ -1,20 +1,23 @@
 import os
 from telegram.ext import CommandHandler, MessageHandler, Filters
-
+from datetime import date
 from settings import WELCOME_MESSAGE, TELEGRAM_SUPPORT_CHAT_ID, REPLY_TO_THIS_MESSAGE, WRONG_REPLY
-
+n = 0
 
 def start(update, context):
     update.message.reply_text(WELCOME_MESSAGE)
-
-    user_info = update.message.from_user.to_dict()
+    username = update.message.chat.username
+    today = date.today()
 
     context.bot.send_message(
         chat_id=TELEGRAM_SUPPORT_CHAT_ID,
         text=f"""
-📞 Connected {user_info}.
+📞 Новый пользователь - @{username}.
+📅 Дата - {today}
+Номер №{n}
         """,
     )
+    n = n + 1
 
 
 def forward_to_chat(update, context):
