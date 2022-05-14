@@ -6,8 +6,6 @@ n = 0
 
 def start(update, context):
     global n
-    user_id == message.chat.id
-    print (user_id)
     update.message.reply_text(WELCOME_MESSAGE)
     username = update.message.chat.username
     today = date.today()
