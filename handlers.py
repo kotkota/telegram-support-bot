@@ -8,7 +8,7 @@ def start(update, context):
     global n
     global listv
     update.message.reply_text(WELCOME_MESSAGE)
-    username = update.message.chat.username
+    username = update.message.from.username
     
     if username in listv:
         today = date.today()
@@ -16,9 +16,9 @@ def start(update, context):
         context.bot.send_message(
             chat_id=TELEGRAM_SUPPORT_CHAT_ID,
             text=f"""
-📞 Пользователь - @{username}.
-📅 Дата - {today}
-🌀Пользователь уже зарегестрирован"""
+🙋 @{username}
+📆 {today}
+➰ Пользователь уже зарегестрирован"""
         )
         
     else:
@@ -28,9 +28,9 @@ def start(update, context):
         context.bot.send_message(
             chat_id=TELEGRAM_SUPPORT_CHAT_ID,
             text=f"""
-📞 Новый пользователь - @{username}.
-📅 Дата - {today}
-🌀Номер №""" + b
+🙋 Новый пользователь - @{username}
+📆 {today}
+➰ Номер №""" + b
         )
         n = n + 1
 
