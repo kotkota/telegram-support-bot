@@ -17,6 +17,6 @@ if TELEGRAM_SUPPORT_CHAT_ID is None or not str(TELEGRAM_SUPPORT_CHAT_ID).lstrip(
 TELEGRAM_SUPPORT_CHAT_ID = int(TELEGRAM_SUPPORT_CHAT_ID)
 
 
-WELCOME_MESSAGE = os.getenv("WELCOME_MESSAGE", "Здравстуй , это бот тех. поддержки , отправь вопрос и один из наших менеджеров на него ответит")
+WELCOME_MESSAGE = os.getenv("WELCOME_MESSAGE", "Привет! Это бот поддержки Надежды души.\n\nНапиши сюда свой запрос и мы ответим на него в ближайшее время. <br>Если вопрос про оплату из-за рубежа, напиши своё Имя, Фамилию и номер телефона, и мы пришлем индивидуальную ссылку на оплату.")
 REPLY_TO_THIS_MESSAGE = os.getenv("REPLY_TO_THIS_MESSAGE", "REPLY_TO_THIS")
 WRONG_REPLY = os.getenv("WRONG_REPLY", "WRONG_REPLY")
