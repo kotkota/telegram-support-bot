@@ -16,7 +16,7 @@ def start(update, context):
         context.bot.send_message(
             chat_id=TELEGRAM_SUPPORT_CHAT_ID,
             text=f"""
-🙋 {update.message.chat.first_name} {update.message.chat.last_name} @{username}
+🙋 @{username}
 📆 {today}
 ➰ Пользователь уже зарегестрирован"""
         )
@@ -28,7 +28,7 @@ def start(update, context):
         context.bot.send_message(
             chat_id=TELEGRAM_SUPPORT_CHAT_ID,
             text=f"""
-🙋 Новый пользователь - {update.message.chat.first_name} {update.message.chat.last_name} @{username}
+🙋 Новый пользователь - @{username}
 📆 {today}
 ➰ Номер №""" + b
         )
